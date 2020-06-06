@@ -1,0 +1,69 @@
+
+require(readr)
+require(dplyr)
+require(doBy)
+require(ggplot2)
+
+
+
+
+files<-list.files(path = "C:/Users/Tyler.Tuo/Desktop/Ass/R",pattern = "*.csv",full.names = T)
+tbl<-sapply(files,read_csv,simplify=FALSE) %>% bind_rows(.id="id")
+
+
+
+tbl$Pheromonecat<-cut(tbl$Pheromone,c(0,16,46,61,76,81),labels = c("15","45","60","75","80"))
+tbl$Alphacat<-cut(tbl$Alpha,c(0,4,5,6,7,8),labels= c("3","4","5","6","7"))
+tbl$Beta<-cut(tbl$Beta,c(0,4,5,6,7,8),labels= c("3","4","5","6","7"))
+tbl$Ant_Pheromone_Quality<-cut(tbl$Ant_Pheromone_Quality,c(0,116,131,146,161,176),labels= c("115","130","145","160","175"))
+tbl$Volatile_Coefficient<-cut(tbl$Volatile_Coefficient,c(0,0.45,0.55,0.65,0.85),labels= c("0.4","0.5","0.6","0.8"))
+tbl$Ants_Number<-cut(tbl$Ants_Number,c(0,26,31,36),labels= c("25","30","35"))
+#tbl$shortest_Time<-as.numeric(tbl$shortest_Time)
+#tbl$Cut_Times<-tbl$Cut_Times
+#tbl_SignedIn$CTR<-as.numeric(tbl$Clicks/tbl$Impressions)
+tbl_ageFinsh<-na.omit(tbl)
+
+ggplot(tbl_ageFinsh, aes(x=shortest_Time, fill=Pheromonecat))+ geom_histogram(binwidth=1)
+ggsave(" the relationship between shortest_Time and Pheromonecat.png")
+
+ggplot(tbl_ageFinsh, aes(x=Cut_Times, fill=Pheromonecat))+ geom_histogram(binwidth=1)
+ggsave(" the relationship between Cut_Times and Pheromonecat.png")
+
+ggplot(tbl_ageFinsh, aes(shortest_Time, colour = Beta)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Beta.png and shortest_Time.png")
+
+ggplot(tbl_ageFinsh, aes(Cut_Times, colour = Beta)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Beta.png and Cut_Times.png")
+
+ggplot(tbl_ageFinsh, aes(shortest_Time, colour = Alphacat)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Alpha and shortest_Time.png")
+
+ggplot(tbl_ageFinsh, aes(Cut_Times, colour = Alphacat)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Alpha and Cut_Times.png")
+
+
+#plot the relationship between gender and impressions(boxplot)
+ggplot(tbl_ageFinsh, aes(x=Ant_Pheromone_Quality, y=shortest_Time, fill=Ant_Pheromone_Quality)) + geom_boxplot()
+ggsave(" Ant_Pheromone_Quality and shortest_Time.png")
+
+#plot the relationship between gender and impressions(boxplot)
+ggplot(tbl_ageFinsh, aes(x=Ant_Pheromone_Quality, y=Cut_Times, fill=Ant_Pheromone_Quality)) + geom_boxplot()
+ggsave(" Ant_Pheromone_Quality and Cut_Times.png")
+
+
+ggplot(tbl_ageFinsh, aes(shortest_Time, colour = Volatile_Coefficient)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Volatile_Coefficient and shortest_Time.png")
+
+ggplot(tbl_ageFinsh, aes(Cut_Times, colour = Volatile_Coefficient)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Volatile_Coefficient and Cut_Times.png")
+
+ggplot(tbl_ageFinsh, aes(shortest_Time, colour = Ants_Number)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Ants_Number and shortest_Time.png")
+
+ggplot(tbl_ageFinsh, aes(Cut_Times, colour = Ants_Number)) +geom_freqpoly(binwidth = 1)
+ggsave(" the relationship between Ants_Number and Cut_Times.png")
+
+
+
+
+
