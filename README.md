@@ -29,9 +29,24 @@ source without any visible hint. Meanwhile, they can change the shortest path de
 example, with ants passing along some paths more and more, the rate of pheromone on these paths becomes more greater which leads to the subsequent ants more likely to choose
 the paths. The process of selection is known as ant autocatalytic behavior.  
 As for the formula of RouteSelection, it represents the probability for the antk choose the next random stationj from stationi. It’s like this:  
-
- 
- 
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/%E5%9B%BE%E7%89%871.png" width ="200" height = "100">  
+• m: the total number of ants.  
+• k: the ant is exploring in the stations, whose serial number is k. (1<k<m)  
+• i: the current station for the ant k.  
+• j:the adjacent stations for the current station.  
+• τij : the pheromone of edge that is from station i to station j.  
+• ηij : the visiablity of edge that is from station i to station j. In addition, the longer  
+the road, the less visibility in the road.  
+• Λ: the station set which is adjacent to the current station.  
+• α: the parameter factor.  
+• β: the parameter factor.  
+As for the formula of PheromoneUpdate, the function is updating the pheromone in each iteration. It’s like this:  
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/%E5%9B%BE%E7%89%872.png" width ="200" height = "100">  
+• n: the total times for m ants to walk athrough all the stations.  
+• τ_ij (n): the pheromone of edge between the station i and station j in the previous iteration.  
+• τ_ij (n + 1): the pheromone of edge between the station i and station j in the current iteration.  
+• ∆τ_k_ij : after this iteration, the ant k remains the pheromone in the edge between the station i and station j.  
+• ρ: Evaporation rate (0<ρ<1)  
 
 ## Test and Results
 There are three sub algorithm for the enhanced ant-colony algorithm.  
@@ -53,4 +68,4 @@ There are three sub algorithm for the enhanced ant-colony algorithm.
 <img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/3.png" width ="200" height = "200">
 <img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/4.png" width ="200" height = "200"> 
 
-Thanks!
+
