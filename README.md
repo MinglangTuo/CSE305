@@ -73,6 +73,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+## Concrete content
+The specific concrete_content.pdf collect the more specific resources.  
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)  
 [xjtlu]Xi’an Jiaotong-liverpool University
