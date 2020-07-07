@@ -18,8 +18,39 @@ The plot Implementation contains the GGplot2 file.
 
 The algorithm Implementation contains the Enhanced-Ant-Colony-algorithm.  
 
+## Mathematical formula  
+
+The A* algorithm as a new heuristic method for finding the path which is completely different from the uniform-cost search algorithm like dijkstra algorithm. It can continuously estimate the distance from the initial point to the end point in the tree or graph in each step. Then, the best optimize path will be selected during the each step. Hart et al. (1968) extended the Dijkstra algorithm (Dijkstra, 1959) to propose the A* algorithm. The A* algorithm was used in lots of dimensions. For example, game units in Starcraft go to find the path, which is formally done using the A* algorithm over and over again,allowing units to find the path to the targer you mouse clicked on. The core principle of A* algorithm can be shown in the following formula:  
+**F(n) = G(n) + H(n)**  
+
+Another heuristic algorithm is ant-colony-optimize algorithm, which is based on the simulation of the ant-colony looking for food to find the optimal path. In the early 1990s,
+M. Dorigo and colleagues discover and create the ant colony optimization (ACO) as an original nature-inspired metaheuristic for solving hard combinatorial optimization (CO) problems. According to the observation and research of entomologists, the ants in the biological world have the ability to find the shortest path from their nest to the food
+source without any visible hint. Meanwhile, they can change the shortest path depends on the change of environiment, adaptively search for new path and generate new choices. The reason is the pheromones which can be regard as the special secretions in the paths. It causes that the ants are able to detect and influence their subsequent movements. For
+example, with ants passing along some paths more and more, the rate of pheromone on these paths becomes more greater which leads to the subsequent ants more likely to choose
+the paths. The process of selection is known as ant autocatalytic behavior.  
+As for the formula of RouteSelection, it represents the probability for the antk choose the next random stationj from stationi. It’s like this:  
+
+ 
+ 
+
 ## Test and Results
+There are three sub algorithm for the enhanced ant-colony algorithm.  
+1.Bus-Busy-Enhance Algorithm  
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic1/1.png" width ="200" height = "200">
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic1/2.png" width ="200" height = "200">  
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic1/3.png" width ="200" height = "200">
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic1/4.png" width ="200" height = "200">   
 
+2.Ant-Colon Algorithm  
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic2/1.png" width ="200" height = "200">
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic2/2.png" width ="200" height = "200">   
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic2/3.png" width ="200" height = "200">
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic2/4.png" width ="200" height = "200">    
 
+2.Cut-lines Algorithm    
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/1.png" width ="200" height = "200">
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/2.png" width ="200" height = "200">  
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/3.png" width ="200" height = "200">
+<img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/4.png" width ="200" height = "200"> 
 
 Thanks!
