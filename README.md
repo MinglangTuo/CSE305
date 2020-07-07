@@ -68,4 +68,11 @@ There are three sub algorithm for the enhanced ant-colony algorithm.
 <img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/3.png" width ="200" height = "200">
 <img src ="https://github.com/MinglangTuo/CSE305/blob/master/Picture/pic3/4.png" width ="200" height = "200"> 
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)  
+[xjtlu]Xi’an Jiaotong-liverpool University
